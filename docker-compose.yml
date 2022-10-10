@@ -1,0 +1,16 @@
+version: "3.9"
+services:
+  mysql:
+    image: mysql
+    ports:
+      - "3306:3306"
+    volumes:
+      - type: volume
+        source: mysqlDB
+        target: /var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: Terraria
+
+volumes:
+  mysqlDB:
