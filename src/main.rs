@@ -17,7 +17,7 @@ fn main() -> std::result::Result<(), Box<dyn std::error::Error>> {
     let mut conn = pool.get_conn()?;
 
     conn.query_drop(
-        r"CREATE TEMPORARY TABLE TestItem (
+        r"CREATE TABLE TestItem (
             amount int not null,
             name text
         )")?;
